@@ -28,13 +28,15 @@ To use this plugin a script reference must be added to the colResizable.min.js f
     });
 
 If you want to resize sub column you have to set table-layout: auto, and the give a query to select the row which is used for resizing.
+
+```javascript
     $(function(){
       $("table).colResizable(
         layoutFixed: false,
         find: (">tbody>tr:first>td") // We are chosing 1 row after header. This means all the column in that row are resizable.
       )
     })
-
+```
 
 ## Attributes
 
