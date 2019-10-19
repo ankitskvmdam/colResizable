@@ -27,6 +27,14 @@ To use this plugin a script reference must be added to the colResizable.min.js f
       $("table").colResizable();
     });
 
+If you want to resize sub column you have to set table-layout: auto, and the give a query to select the row which is used for resizing.
+    $(function(){
+      $("table).colResizable(
+        layoutFixed: false,
+        find: (">tbody>tr:first>td") // We are chosing 1 row after header. This means all the column in that row are resizable.
+      )
+    })
+
 
 ## Attributes
 
@@ -135,20 +143,3 @@ ___
 * **onDrag**: [type: callback function] [default: null] [version: 1.1] 
 
 This event is fired while dragging a column anchor if liveDrag is enabled. It can be useful if the table is being used as a multiple range slider. The callback function can obtain a reference to the updated table through the currentTarget attribute of the event retrieved by parameters
-
-## Backers
-
-colResizable is being developed and maintained for free by Álvaro Prieto Lauroba since 2011. Fortunately there is some lovely people who donated to improve this plugin. [Do you like this plugin? Would you like to help me to improve it? Please! buy me a beer](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XLP55DVN85X8L)  
-
-[![Please donate](http://bacubacu.com/colresizable/donate.jpg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XLP55DVN85X8L)
-
-
-[![Lovely backers](http://yoliprieto.com/alvaro/colresizable/backers1.jpg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XLP55DVN85X8L)
-
-A million thanks to our lovely patrons: 
-* [👑 👑 👑 👑 Mellouki Mohamed 👑 👑 👑 👑 ](https://uk.linkedin.com/in/mohamed-mellouki-13570128) 
-* [👑 👑 👑 👑 Gilles Beaulac 👑 👑 👑 👑 ](https://www.linkedin.com/in/gillesbeaulac) 
-* [💎 💎 💎 Maxim Morozenko 💎 💎 💎 ](https://morozenko.com/) 
-* [Igor Samulenko](https://www.linkedin.com/in/igorsamulenko) 
-* [Aaron Pesce](https://www.linkedin.com/in/aaron-pesce-9611988a) 
-
